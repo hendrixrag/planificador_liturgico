@@ -54,3 +54,9 @@ pids
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Diagrams
+/casos_de_uso.drawio
+/uml_liturgico.drawio
+/uml_liturgico.jpg
+
