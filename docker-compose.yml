@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:15-alpine # Versión ligera y estable
+    container_name: liturgical_db
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
+    ports:
+      - "${DB_PORT}:5432" # Mapea tu puerto del .env al puerto interno de Postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Para que no pierdas tus datos al apagar
+
+volumes:
+  postgres_data:

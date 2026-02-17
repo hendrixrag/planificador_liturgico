@@ -1,34 +1,46 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { SongsService } from './songs.service';
 import { CreateSongDto } from './dto/create-song.dto';
 import { UpdateSongDto } from './dto/update-song.dto';
+import { Song } from './entities/song.entity';
 
 @Controller('songs')
 export class SongsController {
   constructor(private readonly songsService: SongsService) {}
 
   @Post()
-  create(@Body() createSongDto: CreateSongDto) {
+  create(@Body() createSongDto: CreateSongDto): Promise<Song> {
     return this.songsService.create(createSongDto);
   }
 
   @Get()
-  findAll() {
+  findAll(): Promise<Song[]> {
     return this.songsService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
+  findOne(@Param('id') id: string): Promise<Song> {
     return this.songsService.findOne(+id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateSongDto: UpdateSongDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateSongDto: UpdateSongDto,
+  ): Promise<Song> {
     return this.songsService.update(+id, updateSongDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
+  remove(@Param('id') id: string): Promise<void> {
     return this.songsService.remove(+id);
   }
 }
