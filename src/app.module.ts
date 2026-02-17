@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { SongsModule } from './songs/songs.module';
 
 const dbPort = Number.parseInt(process.env.DB_PORT ?? '5432', 10);
 
@@ -21,6 +22,7 @@ const dbPort = Number.parseInt(process.env.DB_PORT ?? '5432', 10);
       autoLoadEntities: true, // 🔍 Busca automáticamente tus archivos .entity.ts
       synchronize: true, // ⚠️ Solo en desarrollo: crea las tablas automáticamente
     }),
+    SongsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

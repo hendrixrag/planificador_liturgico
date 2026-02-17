@@ -1,4 +1,5 @@
 import { IsString, IsInt, MinLength, IsOptional, IsIn } from 'class-validator';
+//import { Type } from 'class-transformer';
 
 export class CreateSongDto {
   @IsString()
@@ -16,5 +17,6 @@ export class CreateSongDto {
 
   @IsInt()
   @IsOptional()
+  //@Type(() => Number)
   bpm?: number;
 }
