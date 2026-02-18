@@ -1,5 +1,5 @@
 import { IsString, IsInt, MinLength, IsOptional, IsIn } from 'class-validator';
-//import { Type } from 'class-transformer';
+import { MUSICAL_KEYS } from '../../common/constants/musical-keys.constant';
 
 export class CreateSongDto {
   @IsString()
@@ -12,11 +12,10 @@ export class CreateSongDto {
 
   @IsString()
   @IsOptional()
-  @IsIn(['C', 'G', 'D', 'A', 'E', 'B', 'F', 'Am', 'Em', 'Dm']) // Lista blanca de tonos
+  @IsIn(MUSICAL_KEYS) // Lista blanca de tonos
   key?: string;
 
   @IsInt()
   @IsOptional()
-  //@Type(() => Number)
   bpm?: number;
 }
