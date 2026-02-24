@@ -1,5 +1,16 @@
-import { IsString, IsInt, MinLength, IsOptional, IsIn } from 'class-validator';
-import { MUSICAL_KEYS } from '../../common/constants/musical-keys.constant';
+import {
+  IsString,
+  IsInt,
+  MinLength,
+  IsOptional,
+  IsEnum,
+  IsIn,
+} from 'class-validator';
+import {
+  MUSICAL_KEYS,
+  type MusicalKey,
+} from '../../common/constants/musical-keys.constant';
+import { LiturgicalCategory } from '../../common/constants/liturgical-categories.constant';
 
 export class CreateSongDto {
   @IsString()
@@ -12,10 +23,13 @@ export class CreateSongDto {
 
   @IsString()
   @IsOptional()
-  @IsIn(MUSICAL_KEYS) // Lista blanca de tonos
-  key?: string;
+  @IsIn(MUSICAL_KEYS)
+  key?: MusicalKey;
 
   @IsInt()
   @IsOptional()
   bpm?: number;
+
+  @IsEnum(LiturgicalCategory)
+  category: LiturgicalCategory;
 }

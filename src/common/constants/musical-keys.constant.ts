@@ -35,3 +35,5 @@ export const MUSICAL_KEYS = [
   'Bbm',
   'Bm',
 ] as const;
+
+export type MusicalKey = (typeof MUSICAL_KEYS)[number];
