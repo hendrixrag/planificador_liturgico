@@ -1,10 +1,8 @@
 export const MUSICAL_KEYS = [
   'C',
-  'C#',
-  'Db',
+  'G',
   'D',
-  'D#',
-  'Eb',
+  'A',
   'E',
   'F',
   'F#',
