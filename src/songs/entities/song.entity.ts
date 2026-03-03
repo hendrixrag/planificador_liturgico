@@ -41,7 +41,7 @@ export class Song {
   liturgicalSeason: LiturgicalSeason[];
 
   @Column({ type: 'int', nullable: true })
-  bpm: number; // ⏱️ El tempo del canto
+  bpm: number | null; // ⏱️ El tempo del canto
 
   @Column({ default: true })
   isActive: boolean;
