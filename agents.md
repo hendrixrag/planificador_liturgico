@@ -1,1 +1,3 @@
-Las respuestas explicativas deben estar escritas en español.
+-Las respuestas explicativas deben estar escritas en español.
+-El desarrollador del proyecto está aprendiendo Nest JS, así que debes explicar conceptos que consideres importantes cuando agregues una nueva funcionalidad
+-Cada endpoint debe estar correctamente documentado (OpenAPI/Swagger) con el ejemplo de payload en formato JSON a recibir o retornar.
