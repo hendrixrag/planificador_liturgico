@@ -36,6 +36,11 @@ export class SongsController {
     return this.songsService.getLiturgicalCategories();
   }
 
+  @Get('meta/seasons')
+  getLiturgicalSeasons() {
+    return this.songsService.getLiturgicalSeasons();
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string): Promise<Song> {
     return this.songsService.findOne(+id);

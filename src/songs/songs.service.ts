@@ -6,6 +6,7 @@ import { CreateSongDto } from './dto/create-song.dto';
 import { UpdateSongDto } from './dto/update-song.dto';
 import { MUSICAL_KEYS } from '../common/constants/musical-keys.constant';
 import { LITURGICAL_CATEGORIES } from '../common/constants/liturgical-categories.constant';
+import { LITURGICAL_SEASONS } from '../common/constants/liturgical-seasons.constant';
 
 @Injectable()
 export class SongsService {
@@ -42,5 +43,9 @@ export class SongsService {
 
   getLiturgicalCategories() {
     return [...LITURGICAL_CATEGORIES];
+  }
+
+  getLiturgicalSeasons() {
+    return [...LITURGICAL_SEASONS];
   }
 }

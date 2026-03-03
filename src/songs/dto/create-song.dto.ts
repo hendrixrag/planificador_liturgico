@@ -5,12 +5,15 @@ import {
   IsOptional,
   IsEnum,
   IsIn,
+  IsArray,
+  ArrayNotEmpty,
 } from 'class-validator';
 import {
   MUSICAL_KEYS,
   type MusicalKey,
 } from '../../common/constants/musical-keys.constant';
 import { LiturgicalCategory } from '../../common/constants/liturgical-categories.constant';
+import { LiturgicalSeason } from '../../common/constants/liturgical-seasons.constant';
 
 export class CreateSongDto {
   @IsString()
@@ -30,6 +33,13 @@ export class CreateSongDto {
   @IsOptional()
   bpm?: number;
 
-  @IsEnum(LiturgicalCategory)
-  category: LiturgicalCategory;
+  @IsArray()
+  @ArrayNotEmpty()
+  @IsEnum(LiturgicalCategory, { each: true })
+  category: LiturgicalCategory[];
+
+  @IsArray()
+  @ArrayNotEmpty()
+  @IsEnum(LiturgicalSeason, { each: true })
+  liturgicalSeason: LiturgicalSeason[];
 }

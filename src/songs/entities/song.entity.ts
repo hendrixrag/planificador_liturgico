@@ -1,5 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 import { LiturgicalCategory } from '../../common/constants/liturgical-categories.constant';
+import { LiturgicalSeason } from '../../common/constants/liturgical-seasons.constant';
 import {
   MUSICAL_KEYS,
   type MusicalKey,
@@ -26,9 +27,18 @@ export class Song {
   @Column({
     type: 'enum',
     enum: LiturgicalCategory,
-    default: LiturgicalCategory.ENTRY,
+    array: true,
+    default: [LiturgicalCategory.ENTRY],
   })
-  category: LiturgicalCategory;
+  category: LiturgicalCategory[];
+
+  @Column({
+    type: 'enum',
+    enum: LiturgicalSeason,
+    array: true,
+    default: [LiturgicalSeason.ORDINARY_TIME],
+  })
+  liturgicalSeason: LiturgicalSeason[];
 
   @Column({ type: 'int', nullable: true })
   bpm: number; // ⏱️ El tempo del canto
