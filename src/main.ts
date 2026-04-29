@@ -8,7 +8,9 @@ async function bootstrap() {
 
   const swaggerConfig = new DocumentBuilder()
     .setTitle('Liturgical Planner API')
-    .setDescription('Documentación de contratos para la API de planificación litúrgica')
+    .setDescription(
+      'Documentación de contratos para la API de planificación litúrgica',
+    )
     .setVersion('1.0')
     .build();
 

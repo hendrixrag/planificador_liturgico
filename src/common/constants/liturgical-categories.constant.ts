@@ -1,9 +1,9 @@
 export enum LiturgicalCategory {
   ENTRY = 'Entrada',
-  PENITENTIAL_ACT = 'Acto penitencial',
+  PENITENTIAL_ACT = 'Acto penitencial / Piedad',
   GLORIA = 'Gloria',
   PSALM = 'Salmo responsorial',
-  GOSPEL_ACCLAMATION = 'Aclamación al Evangelio',
+  GOSPEL_ACCLAMATION = 'Aclamación al Evangelio / Interleccional',
   OFFERTORY = 'Ofertorio',
   HOLY = 'Santo',
   MEMORIAL_ACCLAMATION = 'Aclamación memorial',
